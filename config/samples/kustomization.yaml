@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- byron.fun_v1_rules.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

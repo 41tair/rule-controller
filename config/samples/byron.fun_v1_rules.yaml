@@ -1,0 +1,9 @@
+apiVersion: byron.fun.github.com/v1
+kind: Rules
+metadata:
+  labels:
+    app.kubernetes.io/name: rules-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: rules-sample
+spec:
+  # TODO(user): Add fields here

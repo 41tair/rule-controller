@@ -1,0 +1,27 @@
+# permissions for end users to edit rules.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: rules-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: rules-editor-role
+rules:
+- apiGroups:
+  - byron.fun.github.com
+  resources:
+  - rules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - byron.fun.github.com
+  resources:
+  - rules/status
+  verbs:
+  - get

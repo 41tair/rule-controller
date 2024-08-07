@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	byronfunv1 "github.com/41tair/rules-controller/api/v1"
+	byronfunv1 "github.com/41tair/rules-controller/pkg/apis/rules/v1alpha1"
 )
 
 // RulesReconciler reconciles a Rules object

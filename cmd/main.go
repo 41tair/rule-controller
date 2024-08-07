@@ -35,8 +35,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	byronfunv1 "github.com/41tair/rules-controller/api/v1"
 	"github.com/41tair/rules-controller/internal/controller"
+	byronfunv1 "github.com/41tair/rules-controller/pkg/apis/rules/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

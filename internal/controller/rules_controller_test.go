@@ -25,9 +25,8 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
+	byronfunv1 "github.com/41tair/rules-controller/pkg/apis/rules/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-
-	byronfunv1 "github.com/41tair/rules-controller/api/v1"
 )
 
 var _ = Describe("Rules Controller", func() {

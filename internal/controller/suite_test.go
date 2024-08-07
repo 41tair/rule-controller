@@ -32,7 +32,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	byronfunv1 "github.com/41tair/rules-controller/api/v1"
+	byronfunv1 "github.com/41tair/rules-controller/pkg/apis/rules/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

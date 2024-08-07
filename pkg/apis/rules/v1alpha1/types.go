@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1
+package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -40,6 +40,9 @@ type RulesStatus struct {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +genclient
+// +genclient:noStatus
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // Rules is the Schema for the rules API
 type Rules struct {
@@ -51,7 +54,7 @@ type Rules struct {
 }
 
 // +kubebuilder:object:root=true
-
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // RulesList contains a list of Rules
 type RulesList struct {
 	metav1.TypeMeta `json:",inline"`

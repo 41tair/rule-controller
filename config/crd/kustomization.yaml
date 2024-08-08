@@ -2,10 +2,14 @@
 # since it depends on service name and namespace that are out of this kustomize package.
 # It should be run by config/default
 resources:
-- bases/byron.fun.github.com_rules.yaml
+- bases/byron.fun_rules.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:
+- path: patches/crd-patch.yaml
+  target:
+    kind: CustomResourceDefinition
+    name: rules.byron.fun
 # [WEBHOOK] To enable webhook, uncomment all the sections with [WEBHOOK] prefix.
 # patches here are for enabling the conversion webhook for each CRD
 # +kubebuilder:scaffold:crdkustomizewebhookpatch
@@ -18,5 +22,5 @@ patches:
 # [WEBHOOK] To enable webhook, uncomment the following section
 # the following config is for teaching kustomize how to do kustomization for CRDs.
 
-#configurations:
+configurations:
 #- kustomizeconfig.yaml

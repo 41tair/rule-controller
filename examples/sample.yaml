@@ -1,0 +1,23 @@
+apiVersion: byron.fun/v1alpha1
+kind: Rules
+metadata:
+  labels:
+    app.kubernetes.io/name: rules-controller
+  name: rules-sample
+spec:
+  trigger:
+    podStatus:
+      exitCode: 0
+      selector:
+        namespace: xxxx
+        name: pytorch-*
+        labelSelector: a=b,app=c
+  executors:
+  - print:
+      message: "rules is working $trigger.nodeName $trigger.name"
+  - taint:
+      node:
+        name: $trigger.nodeName
+      key: ddd
+      value: xxxx
+      effect: NoSchedule

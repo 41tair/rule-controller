@@ -20,22 +20,52 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
+type Trigger struct {
+	PodStatus *PodStatus `json:"podStatus"`
+}
+
+type Executor struct {
+	Print *Print `json:"print,omitempty"`
+	Taint *Taint `json:"taint,omitempty"`
+}
+
+type PodStatus struct {
+	ExitCode int       `json:"exitCode"`
+	Selector *Selector `json:"selector"`
+}
+
+type Selector struct {
+	Name          string `json:"name"`
+	Namespace     string `json:"namespace"`
+	LabelSelector string `json:"labelSelector"`
+}
+
+type Print struct {
+	Message string `json:"message"`
+}
+
+type Taint struct {
+	Key    string `json:"key"`
+	Value  string `json:"value"`
+	Effect string `json:"effect"`
+	Node   Node   `json:"node"`
+}
+
+type Node struct {
+	Name string `json:"name"`
+}
 
 // RulesSpec defines the desired state of Rules
 type RulesSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Rules. Edit rules_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Trigger   Trigger    `json:"trigger"`
+	Executors []Executor `json:"executors"`
 }
 
 // RulesStatus defines the observed state of Rules
 type RulesStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	LatestTime   string `json:"latest"`
+	SucceedCount int    `json:"succeedCount"`
+	FailedCount  int    `json:"failedCount"`
 }
 
 // +kubebuilder:object:root=true

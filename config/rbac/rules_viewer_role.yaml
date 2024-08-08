@@ -8,7 +8,7 @@ metadata:
   name: rules-viewer-role
 rules:
 - apiGroups:
-  - byron.fun.github.com
+  - byron.fun
   resources:
   - rules
   verbs:
@@ -16,7 +16,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - byron.fun.github.com
+  - byron.fun
   resources:
   - rules/status
   verbs:

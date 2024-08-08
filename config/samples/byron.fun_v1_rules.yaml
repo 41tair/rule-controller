@@ -1,4 +1,4 @@
-apiVersion: byron.fun.github.com/v1
+apiVersion: byron.fun/v1
 kind: Rules
 metadata:
   labels:

@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.15.0
-  name: rules.rules.byron.fun
+  name: rules.byron.fun
 spec:
-  group: rules.byron.fun
+  group: byron.fun
   names:
     kind: Rules
     listKind: RulesList

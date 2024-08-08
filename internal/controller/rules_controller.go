@@ -33,9 +33,9 @@ type RulesReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-// +kubebuilder:rbac:groups=byron.fun.github.com,resources=rules,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=byron.fun.github.com,resources=rules/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=byron.fun.github.com,resources=rules/finalizers,verbs=update
+// +kubebuilder:rbac:groups=byron.fun,resources=rules,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=byron.fun,resources=rules/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=byron.fun,resources=rules/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.

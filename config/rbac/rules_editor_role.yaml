@@ -8,7 +8,7 @@ metadata:
   name: rules-editor-role
 rules:
 - apiGroups:
-  - byron.fun.github.com
+  - byron.fun
   resources:
   - rules
   verbs:
@@ -20,7 +20,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - byron.fun.github.com
+  - byron.fun
   resources:
   - rules/status
   verbs:

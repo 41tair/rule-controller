@@ -39,13 +39,82 @@ spec:
           spec:
             description: RulesSpec defines the desired state of Rules
             properties:
-              foo:
-                description: Foo is an example field of Rules. Edit rules_types.go
-                  to remove/update
-                type: string
+              executors:
+                items:
+                  properties:
+                    print:
+                      properties:
+                        message:
+                          type: string
+                      required:
+                      - message
+                      type: object
+                    taint:
+                      properties:
+                        effect:
+                          type: string
+                        key:
+                          type: string
+                        node:
+                          properties:
+                            name:
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        value:
+                          type: string
+                      required:
+                      - effect
+                      - key
+                      - node
+                      - value
+                      type: object
+                  type: object
+                type: array
+              trigger:
+                properties:
+                  podStatus:
+                    properties:
+                      exitCode:
+                        type: integer
+                      selector:
+                        properties:
+                          labelSelector:
+                            type: string
+                          name:
+                            type: string
+                          namespace:
+                            type: string
+                        required:
+                        - labelSelector
+                        - name
+                        - namespace
+                        type: object
+                    required:
+                    - exitCode
+                    - selector
+                    type: object
+                required:
+                - podStatus
+                type: object
+            required:
+            - executors
+            - trigger
             type: object
           status:
             description: RulesStatus defines the observed state of Rules
+            properties:
+              failedCount:
+                type: integer
+              latest:
+                type: string
+              succeedCount:
+                type: integer
+            required:
+            - failedCount
+            - latest
+            - succeedCount
             type: object
         type: object
     served: true

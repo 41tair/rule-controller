@@ -1,0 +1,28 @@
+- op: add
+  path: /spec/names/shortNames
+  value: ["rules"]
+
+- op: add
+  path: /spec/versions/0/selectableFields
+  value: [
+  {"jsonPath": ".status.latest"},
+  {"jsonPath": ".status.succeedCount"},
+  {"jsonPath": ".status.failedCount"},
+  ]
+
+- op: add
+  path: /spec/versions/0/additionalPrinterColumns
+  value: [
+  {"jsonPath": ".status.latest",
+  "name": "Latest",
+  "type": "string"
+  },
+  {"jsonPath": ".status.succeedCount",
+  "name": "Succeed",
+  "type": "integer"
+  },
+  {"jsonPath": ".status.failedCount",
+  "name": "Failed",
+  "type": "integer"
+  }
+  ]
